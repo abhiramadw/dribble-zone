@@ -1,0 +1,32 @@
+Nama   : Pria Abhirama Dewa
+NPM    : 2406358043
+Kelas  : PBP D
+Tautan : https://pria-abhirama-dribblezone.pbp.cs.ui.ac.id/
+
+1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
+    Pertama kita nyalain dulu python env nya lalu membuat project django baru dengan django-admin startproject (nama project) lalu kita semua terlebih dahulu seperti allowed host,env prod,env,database dan pws nya , setelah itu kita buat django start app main dan mengganti models dengan apa yag disuruh lalu kita routing main agar bisa dijalankan setelah itu kita buat fungsi dalam views untuk menampilkan nama apps dll setelah itu kita deploy ke pws
+
+    Pertama, saya membuat direktori lokal dan repository github bernama dribble-zone, kemudian membuat virtual environment untuk mengisolasi proyek dari proyek lain. Lalu, saya melakukan instalasi dependencies yang dibutuhkan dan membuat proyek Django. Selanjutnya, saya menambahkan konfigurasi untuk development lokal dan production deployment melalui file .env dan .env.prod, serta memodifikasi settings.py untuk pengaturan perizinan akses.
+
+    Setelah itu, saya membuat aplikasi main di direktori dribble-zone dengan menjalankan perintah python manage.py startapp main. Pada aplikasi main, saya membuat direktori templates dan menambahkan file main.html untuk kebutuhan Tugas 2. Kemudian, saya menambahkan konfigurasi routing di urls.py untuk aplikasi main, serta membuat fungsi show_main di views.py yang menampilkan template main.html berisi nama aplikasi, nama, dan kelas. Untuk melengkapinya, saya juga membuat file urls.py guna memetakan fungsi show_main ke aplikasinya.
+
+    Selanjutnya saya membuat model Product dengan atribut berupa name (CharField), price (IntegerField), description (TextField), thumbnail (URLField), category (CharField), dan is_featured (BooleanField). Setelah model selesai dibuat, saya membuat project baru di PWS dan menyesuaikan environment dengan .env.prod. Pada settings.py, saya menambahkan URL deployment pria-abhirama-dribblezone.pbp.cs.ui.id. Setelah konfigurasi selesai, saya menjalankan perintah python manage.py makemigrations dan python manage.py migrate untuk mempersiapkan database. Terakhir, saya menyambungkan repository dengan PWS, menjalankan project command, melakukan build, dan melakukan push dengan perintah git push pws master untuk deployment.
+
+2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+    Ketika client mengirimkan sebuah HTTP request ke server Django, permintaan tersebut akan diproses dengan mencocokkan URL yang diminta terhadap pola yang sudah didefinisikan di dalam file urls.py. File ini berfungsi sebagai pengatur route yang menghubungkan URL dengan fungsi di aplikasi 'main'. Setelah URL sesuai ditemukan, request diteruskan ke views.py, yang bertugas mengelola logika seperti sebuah fungsi. Pada tahap ini, views.py dapat mengambil atau memanipulasi data melalui models.py, yang merupakan komponen untuk mengatur serta mengelola data aplikasi melalui database. Setelah memperoleh data yang dibutuhkan, views.py akan merender template HTML dengan data tersebut, sehingga menghasilkan tampilan akhir yang siap dikirimkan ke client. Hasil akhirnya berupa response HTML yang telah diproses oleh Django dan ditampilkan di browser client.
+
+    (https://drive.google.com/file/d/1U68KEgUZgsqV4Joz45wpokbj2RSpB0kc/view?usp=sharing)
+
+3. Jelaskan peran settings.py dalam proyek Django!
+    Setting.py mendefinisikan koneksi ke database, mendaftarkan semua aplikasi yang aktif (INSTALLED_APPS), dan mengelola pengaturan keamanan krusial seperti SECRET_KEY dan DEBUG. Selain itu, file ini juga mengontrol bagaimana template (HTML) ditemukan dan di-render, menangani lokasi file statis (CSS, JavaScript), dan menentukan konfigurasi URL utama, sehingga secara efektif menjadi pusat kendali yang menentukan seluruh perilaku dan arsitektur aplikasi web.
+
+4. Bagaimana cara kerja migrasi database di Django?
+    Migrasi di Django adalah proses untuk menjaga agar struktur database selalu sesuai dengan definisi model yang ada di aplikasi. Setiap kali models.py ditambahkan, diubah, atau ada atribut yang dihapus, Django tidak langsung mengubah database, tetapi menyimpannya dulu sebagai perubahan skema. Dengan perubahan itu kemudian diterjemahkan menjadi file migration, seperti catatan yang isinya instruksi tentang apa yang harus dilakukan pada database. Setelah file migrasi dibuat dengan perintah python manage.py makemigrations, langkah berikutnya adalah menerapkan perubahan tersebut ke database dengan perintah python manage.py migrate.
+
+    Cara kerja migrasi di Django dapat dipahami sebagai jembatan antara kode Python pada models.py dengan struktur di dalam database. Ketika perintah python manage.py makemigrations dijalankan, Django akan membandingkan kondisi model saat ini dengan migrasi sebelumnya, lalu membuat file migrasi baru yang berisi perubahan dari sebuah model. File migrasi tersebut belum memengaruhi database, melainkan hanya mendokumentasikan rencana perubahan. Setelah itu, saat kita menjalankan python manage.py migrate, Django mengeksekusi isi file migrasi tersebut dengan menghasilkan query SQL yang sesuai dengan database yang digunakan, lalu menerapkannya langsung ke dalam database. Dengan cara tersebut, setiap perubahan data model tercatat, dapat dikelola bertahap, dan bisa di-rollback atau dijalankan ulang bila diperlukan.
+
+5. Menurut Anda, dari semua framework yang ada, mengapa framework Django dijadikan permulaan pembelajaran pengembangan perangkat lunak?
+    Menurut saya framework Django merupakan salah satu framework yang beginner-friendly. Selain itu, python juga sudah dipelajarai sejak semester 1. Strukturnya juga jelas dengan pola MVT (Model-View-Template) sehingga membantu pemula memahami pemisahan tugas dalam kode. Django juga merupakan framework full-stack yang dapat digunakan untuk mengembangkan sisi backend sekaligus menyediakan frontend melalui HTML. Hal tersebut membuat Django cocok sebagai langkah awal untuk memahami pengembangan perangkat lunak secara menyeluruh.
+
+6. Apakah ada feedback untuk asisten dosen tutorial 1 yang telah kamu kerjakan sebelumnya?
+    Tidak ada, sisten dosen tutorial 1 telah menjalankan perannya dengan sangat baik.
