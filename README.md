@@ -3,6 +3,7 @@ NPM    : 2406358043
 Kelas  : PBP D
 Tautan : https://pria-abhirama-dribblezone.pbp.cs.ui.ac.id/
 
+TUGAS 2
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
     Pertama kita nyalain dulu python env nya lalu membuat project django baru dengan django-admin startproject (nama project) lalu kita semua terlebih dahulu seperti allowed host,env prod,env,database dan pws nya , setelah itu kita buat django start app main dan mengganti models dengan apa yag disuruh lalu kita routing main agar bisa dijalankan setelah itu kita buat fungsi dalam views untuk menampilkan nama apps dll setelah itu kita deploy ke pws
 
@@ -29,4 +30,26 @@ Tautan : https://pria-abhirama-dribblezone.pbp.cs.ui.ac.id/
     Menurut saya framework Django merupakan salah satu framework yang beginner-friendly. Selain itu, python juga sudah dipelajarai sejak semester 1. Strukturnya juga jelas dengan pola MVT (Model-View-Template) sehingga membantu pemula memahami pemisahan tugas dalam kode. Django juga merupakan framework full-stack yang dapat digunakan untuk mengembangkan sisi backend sekaligus menyediakan frontend melalui HTML. Hal tersebut membuat Django cocok sebagai langkah awal untuk memahami pengembangan perangkat lunak secara menyeluruh.
 
 6. Apakah ada feedback untuk asisten dosen tutorial 1 yang telah kamu kerjakan sebelumnya?
-    Tidak ada, sisten dosen tutorial 1 telah menjalankan perannya dengan sangat baik.
+    Tidak ada, asisten dosen tutorial 1 telah menjalankan perannya dengan sangat baik.
+
+TUGAS 3
+1. Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+    Dalam pengimplementasian sebuah platform, data delivery diperlukan untuk menjamin informasi yang disampaikan antar komponen sistem berjalan dengan sesuai. Komunikasi client-server dapat terjadi juga melalui data delivery yang memungkinkan pertukaran informasi antara frontend dan backend. Selain itu, data delivery juga penting untuk menjaga keamanan data serta memungkinkan integrasi sistem, yaitu tepatnya komunikasi antar microservices.
+
+2. Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?
+    Menurut saya, secara umum JSON lebih baik daripada XML karena sintaks yang lebih sederhana dan ukuran file yang lebih ringan sehingga mempercepat pertukaran data. Sementara, XML sintaksnya lebih rumit karena banyak tag yang membuatnya kurang enak saat dibaca. Kelebihan JSON tersebut juga lah yang membuatnya lebih populer dibanding XML. Selain itu, kemudahan penggunaan JSON dan dukungan yang luas di API modern membuat JSON lebih populer dibandingkan XML.  
+
+3. Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?
+    is_valid() merupakan method bawaan Django untuk form validation yang berperan dalam memeriksa apakah data yang diinput sesuai dengan aturan validasi yang telah ditentukan, baik validasi bawaan maupun validasi kustom yang kita definisikan sendiri. Jika data valid, method akan mengembalikan true, vice versa. Kita membutuhkan method is_valid() untuk menjamin data yang masuk konsisten, tidak salah format, dan tidak berpotensi menimbulkan bug serta celah keamanan.
+
+4. Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?
+    CSRF token adalah mekanisme keamanan yang penting dalam pengembangan berbasis platform. CSRF token akan menggenerate token unik untuk setiap session dan token disisipkan dalam form sebagai hidden fild kemudian server akan memverifikasi token saat menerima request POST. Tanpa CSRF token, penyerang dapat memanfaatkan celah keamanan untuk melakukan serangan Cross-Site Request Forgery (CSRF), yaitu serangan dimana penyerang mencoba membuat pengguna yang sudah login melakukan aksi tanpa sadar (misalnya mengirim form atau melakukan transaksi) melalui permintaan palsu. Oleh karena itu, CSRF token penting untuk memastikan form submission berasal dari situs yang sah dan melindungi dari request palsu situs lain.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    Pertama, saya membuat sebuah ProductForm yang nantinya digunakan sebagai form input saat menambahkan produk baru ke dalam sistem. Form tersebut kemudian dihubungkan dengan template create_product.html agar pengguna bisa mengisi data produk ketika ingin menambahkan produk. Selanjutnya, saya mengedit main.html agar dapat menampilkan daftar semua produk yang tersimpan beserta informasi pentingnya, lalu menambahkan product_detail.html untuk menampilkan detail lengkap dari sebuah produk tertentu. Selain itu, saya menambahkan fungsi pada views.py untuk menangani proses pembuatan produk baru serta fungsi lain untuk menyajikan data produk dalam format JSON maupun XML sehingga lebih fleksibel jika data ingin diakses sebagai API. Demi keamanan, saya menambahkan pengaturan CSRF_TRUSTED_ORIGINS agar form hanya menerima input dari sumber tepercaya dan tidak mudah dieksploitasi penyerang. Terakhir, saya membuat template utama base.html sebagai kerangka dasar agar semua halaman memiliki struktur yang konsisten dan lebih mudah dikelola.
+
+6. Apakah ada feedback untuk asdos di tutorial 2 yang sudah kalian kerjakan?
+    Tidak ada, asisten dosen tutorial 2 telah menjalankan perannya dengan sangat baik.
+
+7. Mengakses keempat URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md
+    (https://drive.google.com/drive/folders/1mOFxfkNjR8Zsp0B7s7V_Ib51Kiu8yL_w?usp=sharing)
